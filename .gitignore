@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/itsdangerous
+itsdangerous.so
+itsdangerous.dylib
+itsdangerous.dll
+itsdangerous.a
+itsdangerous.lib
+itsdangerous-test-*
+*.exe
+*.o
+*.obj
+*.lst

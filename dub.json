@@ -1,0 +1,26 @@
+{
+	"authors": [
+		"user"
+	],
+	"copyright": "Copyright © 2020, Ferhat Kurtulmuş",
+	"description": "D port of the itsdangerous Python library.",
+	"license": "Boost",
+    "name": "itsdangerous",
+    "version": "0.0.1",
+    "importPaths": ["source"],
+    "sourcePaths": ["source"],
+    "configurations": [
+        {
+            "name": "library",
+            "targetType": "library",
+            "sourcePaths": ["source"]
+        },
+        {
+            "name": "import",
+            "targetType": "sourceLibrary",
+            "sourceFiles-posix": ["libitsdangerous.a"],
+            "sourceFiles-windows": ["itsdangerous.lib"]
+        }
+
+    ]
+}
