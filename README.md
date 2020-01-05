@@ -13,11 +13,11 @@ import itsdangerous;
 
 void main(){
     // Signer
-	string secretkey = "hello";
+    string secretkey = "hello";
     
     auto signer = new Signer!(SHA1, SHA1)(secretkey);
-	string signature = signer.sign("this is a test");
-	assert(signature == "this is a test.hgGT0Zoara4L13FX3_xm-xmfa_0");
+    string signature = signer.sign("this is a test");
+    assert(signature == "this is a test.hgGT0Zoara4L13FX3_xm-xmfa_0");
     
     assert(signer.verifySignature("this is a test", "hgGT0Zoara4L13FX3_xm-xmfa_0") == true);
     assert(signer.unsign("this is a test.hgGT0Zoara4L13FX3_xm-xmfa_0") == "this is a test");
@@ -27,7 +27,7 @@ void main(){
 
     JSONValue obj;
     obj["a"] = 13;
-	obj["b"] = "test me";
+    obj["b"] = "test me";
 
     // below configuration is the default of Python version: s = TimedJSONWebSignatureSerializer(secretkey, expiresIn)
     // output token can be tested on https://jwt.io/
