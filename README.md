@@ -3,7 +3,7 @@
 D port of the [itsdangerous](https://github.com/pallets/itsdangerous) Python library.
 
 ## Disclaimer
-Although initial test are OK, more tests are needed. Please do not use for production yet. Or please make your tests and make PRs if needed.
+Although initial tests are OK, more tests are needed. Please do not use for production yet. Or please make your own tests and make PRs if needed.
 
 ## Some example usages
 ```d
