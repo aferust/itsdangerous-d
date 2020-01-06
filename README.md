@@ -41,9 +41,9 @@ void main(){
             "eyJhbGciOiJIUzUxMiIsImV4cCI6MTU3ODI1MjY2NSwiaWF0IjoxNTc4MjQ5MDY1fQ.eyJhIjoxMywiYiI6InRlc3QgbWUifQ.qqrNdREltv9-3khCBxd0BQI50gTNNLbjUcjVOdCR6arlBrVTx1NGAfpoqn_FHYl2bxFbyWEvPFCumfr_e_m-UA"
         ).writeln;
     } catch (SignatureExpired exp){
-        writeln("signature expired!");
+        writeln("signature expired!: " ~ exp.msg ~ " | For paylodad: " ~ exp.payload);
     } catch (BadSignature exp){
-        writeln("Bad signature!");
+        writeln("Bad signature!" ~ exp.msg);
     }
 }
 ```

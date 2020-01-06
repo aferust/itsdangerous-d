@@ -230,7 +230,9 @@ class TimedJSONWebSignatureSerializer(DigestMethod, SignerType) :
         try{
             const exp = ("exp" in header).integer;
         }catch(JSONException ex){
-            throw new BadSignature("Missing expiry date");
+            auto excn = new BadHeader("Missing expiry date");
+            excn.payload = payload.toJSON;
+            throw excn;
         }
         
         auto int_date_error = new BadHeader("Expiry date is not an IntDate");
@@ -257,7 +259,9 @@ class TimedJSONWebSignatureSerializer(DigestMethod, SignerType) :
         try{
             const long exp = ("exp" in header).integer;
         }catch(JSONException ex){
-            throw new BadSignature("Missing expiry date");
+            auto excn = new BadHeader("Missing expiry date");
+            excn.payload = payload.toJSON;
+            throw excn;
         }
         
         auto int_date_error = new BadHeader("Expiry date is not an IntDate");
@@ -271,8 +275,12 @@ class TimedJSONWebSignatureSerializer(DigestMethod, SignerType) :
         if (header["exp"].integer < 0)
             throw int_date_error;
         
-        if (header["exp"].integer < now())
-            throw new SignatureExpired(format("Signature expired: date signed: %s", getIssueDate(header)));
+        if (header["exp"].integer < now()){
+            auto excn = new SignatureExpired(format("Signature expired: date signed: %s", getIssueDate(header)));
+            excn.payload = payload.toJSON;
+            throw excn;
+        }
+            
         return tuple(payload, header);
     }
 

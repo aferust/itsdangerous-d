@@ -11,7 +11,8 @@ class BadData : Exception {
 class BadSignature : BadData {
     /+ Raised if a signature does not match. +/
     string payload;
-
+    string header;
+    
     this(string msg, string file = __FILE__, size_t line = __LINE__, string payload = null) {
         super(msg, file, line);
         /+
