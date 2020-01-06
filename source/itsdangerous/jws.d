@@ -156,7 +156,7 @@ class JSONWebSignatureSerializer(DigestMethod, SignerType) : Serializer!SignerTy
         auto signer = makeSignerForTJWT(salt);
         //signer.writeln;
         //signer.getAlgorithm.writeln;
-        auto tmp = dumpPayload(header, obj); writeln("dumpPayload: ", tmp);
+        auto tmp = dumpPayload(header, obj);
         return signer.sign(tmp);
     }
 
