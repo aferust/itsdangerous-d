@@ -3,7 +3,7 @@
 		"user"
 	],
 	"copyright": "Copyright © 2020, Ferhat Kurtulmuş",
-	"description": "D port of the itsdangerous Python library.",
+	"description": "D port of the itsdangerous Python library. Create, sign, and verify JSON Web Tokens (JWT) and more.",
 	"license": "Boost",
     "name": "itsdangerous",
     "version": "0.0.2",
