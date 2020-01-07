@@ -139,7 +139,8 @@ class TimedSerializer(SignerType) : Serializer!SignerType {
         Exception lastException = null;
         int timestamp;
         string base64d;
-        
+        if(signer is null)
+            signer = makeSigner(this.salt);
         try{
             base64d = signer.unsign(s, maxAge, &timestamp);
             auto payload = loadPayload(base64d); 

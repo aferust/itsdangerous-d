@@ -63,6 +63,8 @@ class Serializer(SignerType) {
         /+ Reverse of :meth:`dumps`. Raises :exc:`.BadSignature` if the
         signature validation fails.
         +/
+        if(signer is null)
+            signer = makeSigner(salt);
         try{
             return loadPayload(signer.unsign(s));
         } catch (BadSignature ex) {

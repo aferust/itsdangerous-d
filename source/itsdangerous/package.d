@@ -31,6 +31,7 @@ public {
     import itsdangerous.timed;
     import itsdangerous.serializer;
     import itsdangerous.jws;
+    import itsdangerous.urlsafe;
     
     import std.digest.sha;
     import std.json;
