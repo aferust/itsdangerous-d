@@ -228,7 +228,7 @@ class TimedJSONWebSignatureSerializer(DigestMethod, SignerType) :
         JSONValue header = tup[1];
 
         try{
-            const exp = ("exp" in header).integer;
+            const exp = ("exp" in header);
         }catch(JSONException ex){
             auto excn = new BadHeader("Missing expiry date");
             excn.payload = payload.toJSON;
@@ -255,20 +255,20 @@ class TimedJSONWebSignatureSerializer(DigestMethod, SignerType) :
         auto tup = this.JSONWebSignatureSerializer.loadsWithHeader(s, salt);
         JSONValue payload = tup[0];
         JSONValue header = tup[1];
-
+        
         try{
-            const long exp = ("exp" in header).integer;
+            const exp = ("exp" in header);
         }catch(JSONException ex){
-            auto excn = new BadHeader("Missing expiry date");
+            auto excn = new BadHeader("Missing expiry date!");
             excn.payload = payload.toJSON;
             throw excn;
         }
         
-        auto int_date_error = new BadHeader("Expiry date is not an IntDate");
+        auto int_date_error = new BadHeader("Expiry date is not an IntDate!");
         
         try{
             header["exp"] = header["exp"].integer;
-        } catch (Exception ex){
+        } catch (JSONException ex){
             throw int_date_error;
         }
 
