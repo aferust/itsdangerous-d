@@ -1,9 +1,6 @@
 # itsdangerous-d
 
-D port of the [itsdangerous](https://github.com/pallets/itsdangerous) Python library.
-
-## Disclaimer
-Although initial tests are OK, more tests are needed. Please do not use for production yet. Or please make your own tests and make PRs if needed.
+D port of the [itsdangerous](https://github.com/pallets/itsdangerous) Python library. Create, sign, and verify JSON Web Tokens (JWT) and more.
 
 ## Some example usages
 ```d
