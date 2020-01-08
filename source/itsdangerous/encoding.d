@@ -50,7 +50,7 @@ auto rsplit(string str, char sep){ // emulating behaviour of python rsplit
     else if (arr.length == 3){
         auto last = arr[$-1];
         arr.popBack();
-        return [arr[0] ~ '.' ~ arr[1], last];
+        return [arr[0] ~ sep ~ arr[1], last];
     } else {
         throw new Exception("Unexpected signature: more than 3 elements!");
     }
